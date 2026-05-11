@@ -8,11 +8,10 @@ public class GymClass {
 
     public GymClass() {}
 
-    public GymClass(String className, String trainer, int maxCapacity, int currentCapacity) {
-        this.className = className;
-        this.trainer = trainer;
-        this.maxCapacity = maxCapacity;
-        this.currentCapacity = currentCapacity;
+    public GymClass(String className, String trainer, int maxCapacity) {
+        setClassName(className);
+        setTrainer(trainer);
+        setMaxCapacity(maxCapacity);
     }
 
     public String getClassName() {
