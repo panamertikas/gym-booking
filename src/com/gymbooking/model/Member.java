@@ -2,22 +2,20 @@ package com.gymbooking.model;
 
 import com.gymbooking.util.GymUtils;
 
-public class Member {
+public class Member extends Person{
 
-    private String firstname;
-    private String lastname;
+
     private String mail;
-    private int age;
+
 
 
     // Default and overloaded constructors
     public Member() {}
 
     public Member(String firstname, String lastname, String mail, int age) {
-        setFirstname(firstname);
-        setLastname(lastname);
+        super(firstname, lastname, age);
         setMail(mail);
-        setAge(age);
+
     }
 
     /**
@@ -29,29 +27,6 @@ public class Member {
 
     // Getters - Setters
 
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname (String firstname) {
-        if (GymUtils.isNullOrEmpty(firstname)) {
-            System.out.println("Invalid firstname");
-            return;
-        }
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        if (GymUtils.isNullOrEmpty(lastname)) {
-            System.out.println("Invalid lastname.");
-            return;
-        }
-        this.lastname = lastname;
-    }
 
     public String getMail() {
         return mail;
@@ -65,17 +40,7 @@ public class Member {
         this.mail = mail;
     }
 
-    public int getAge() {
-        return age;
-    }
 
-    public void setAge(int age) {
-        if (!GymUtils.isPositive(age)) {
-            System.out.println("Invalid age.");
-            return;
-        }
-        this.age = age;
-    }
 
 //    public void printInfo() {
 //        System.out.println("Firstname: " + firstname + "\n" + "Lastname: " + lastname + "\n" +
@@ -84,7 +49,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return "Firstname: " + firstname + "\n" + "Lastname: " + lastname + "\n" +
-                "E-mail : " + mail + "\n" + "Age: " + age + "\n" ;
+        return "Firstname: " + getFirstname() + "\n" + "Lastname: " + getLastname() + "\n" +
+                "E-mail : " + mail + "\n" + "Age: " + getAge() + "\n" ;
     }
 }
