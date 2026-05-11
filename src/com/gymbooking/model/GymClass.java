@@ -20,6 +20,13 @@ public class GymClass {
         classCount++;
     }
 
+    /**
+     * Static factory method to create a new GymClass instance.
+     */
+    public static GymClass of(String className, String trainer, int maxCapacity) {
+        return new GymClass(className, trainer, maxCapacity);
+    }
+
     public static int getClassCount() {
         return classCount;
     }

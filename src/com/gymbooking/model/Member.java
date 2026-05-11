@@ -20,6 +20,13 @@ public class Member {
         setAge(age);
     }
 
+    /**
+     * Static factory method to create a new Member instance.
+     */
+    public static Member of(String firstname, String lastname, String mail, int age) {
+        return new Member(firstname, lastname, mail, age);
+    }
+
     // Getters - Setters
 
     public String getFirstname() {
