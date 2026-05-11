@@ -5,13 +5,17 @@ public class GymClass {
     private String trainer;
     private int maxCapacity;
     private int currentCapacity;
+    private static int classCount = 0;
 
-    public GymClass() {}
+    public GymClass() {
+        classCount++;
+    }
 
     public GymClass(String className, String trainer, int maxCapacity) {
         setClassName(className);
         setTrainer(trainer);
         setMaxCapacity(maxCapacity);
+        classCount++;
     }
 
     public String getClassName() {
