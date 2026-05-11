@@ -1,5 +1,7 @@
 package com.gymbooking.model;
 
+import com.gymbooking.util.GymUtils;
+
 public class GymClass {
     private String className;
     private String trainer;
@@ -27,6 +29,10 @@ public class GymClass {
     }
 
     public void setClassName(String className) {
+        if (GymUtils.isNullOrEmpty(className)) {
+            System.out.println("Class name can not be null.");
+            return;
+        }
         this.className = className;
     }
 
@@ -35,6 +41,10 @@ public class GymClass {
     }
 
     public void setTrainer(String trainer) {
+        if (GymUtils.isNullOrEmpty(trainer)) {
+            System.out.println("Trainer name can not be null.");
+            return;
+        }
         this.trainer = trainer;
     }
 
@@ -43,7 +53,7 @@ public class GymClass {
     }
 
     public void setMaxCapacity(int maxCapacity) {
-        if (maxCapacity <= 0 ) {
+        if (!GymUtils.isPositive(maxCapacity)) {
             System.out.println("Invalid max capacity.");
             return;
         }

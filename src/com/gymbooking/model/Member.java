@@ -1,5 +1,7 @@
 package com.gymbooking.model;
 
+import com.gymbooking.util.GymUtils;
+
 public class Member {
 
     private String firstname;
@@ -25,6 +27,10 @@ public class Member {
     }
 
     public void setFirstname (String firstname) {
+        if (GymUtils.isNullOrEmpty(firstname)) {
+            System.out.println("Invalid firstname");
+            return;
+        }
         this.firstname = firstname;
     }
 
@@ -33,6 +39,10 @@ public class Member {
     }
 
     public void setLastname(String lastname) {
+        if (GymUtils.isNullOrEmpty(lastname)) {
+            System.out.println("Invalid lastname.");
+            return;
+        }
         this.lastname = lastname;
     }
 
@@ -41,6 +51,10 @@ public class Member {
     }
 
     public void setMail(String mail) {
+        if (GymUtils.isNullOrEmpty(mail)) {
+            System.out.println("Invalid mail");
+            return;
+        }
         this.mail = mail;
     }
 
@@ -49,7 +63,7 @@ public class Member {
     }
 
     public void setAge(int age) {
-        if (age <= 0) {
+        if (!GymUtils.isPositive(age)) {
             System.out.println("Invalid age.");
             return;
         }
