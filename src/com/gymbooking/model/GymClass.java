@@ -18,6 +18,10 @@ public class GymClass {
         classCount++;
     }
 
+    public static int getClassCount() {
+        return classCount;
+    }
+
     public String getClassName() {
         return className;
     }
@@ -73,6 +77,10 @@ public class GymClass {
                 "Max Capacity: " + maxCapacity + "\n" + "Current Capacity: " + currentCapacity + "\n";
     }
 
+    /**
+     * Adds a member to the class.
+     * Fails if the class is already full.
+     */
     public void addMember() {
         if (currentCapacity >= maxCapacity) {
             System.out.println("Class is full");
@@ -83,6 +91,11 @@ public class GymClass {
         System.out.println("Member added. Current capacity: " + currentCapacity);
     }
 
+
+    /**
+     * Removes a member from the class.
+     * Fails if the class is empty.
+     */
     public void removeMember() {
         if (currentCapacity <= 0) {
             System.out.println("Class is empty. No members to remove");
@@ -93,6 +106,9 @@ public class GymClass {
         System.out.println("Member removed. Current capacity: " +currentCapacity);
     }
 
+    /**
+     * Returns true if the class has reached max capacity.
+     */
     public boolean isFull() {
         return currentCapacity >= maxCapacity;
     }
