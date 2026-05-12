@@ -8,12 +8,10 @@ public class Main {
     public static void main(String[] args) {
 
         Member m = Member.of("Panos", "Mertikas", "panos@mail.com", 25);
+        Trainer t = Trainer.of("Maria", "Papadopoulou", 35, "Yoga");
 
-        GymClass yoga = GymClass.of("Yoga", "Maria", 10);
-
-        Booking booking = Booking.of("2024-01-15", "10:00", yoga, m);
-
-        System.out.println(booking);
+        System.out.println(m.getRole());
+        System.out.println(t.getRole());
     }
 }
 

@@ -25,6 +25,11 @@ public class Member extends Person{
         return new Member(firstname, lastname, mail, age);
     }
 
+    @Override
+    public String getRole() {
+        return "Member";
+    }
+
     // Getters - Setters
 
 

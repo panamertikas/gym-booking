@@ -2,7 +2,7 @@ package com.gymbooking.model;
 
 import com.gymbooking.util.GymUtils;
 
-public class Person {
+public abstract class Person {
 
     private String firstname;
     private String lastname;
@@ -17,6 +17,8 @@ public class Person {
         setLastname(lastname);
         setAge(age);
     }
+
+    public abstract String getRole();
 
     public String getFirstname() {
         return firstname;

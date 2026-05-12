@@ -19,6 +19,11 @@ public class Trainer extends Person{
         return new Trainer(firstname, lastname, age, speciality);
     }
 
+    @Override
+    public String getRole() {
+        return "Trainer";
+    }
+
     public String getSpeciality() {
         return speciality;
     }
