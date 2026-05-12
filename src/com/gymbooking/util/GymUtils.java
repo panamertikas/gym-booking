@@ -21,4 +21,11 @@ public class GymUtils {
     public static boolean isPositive(int value) {
         return value > 0;
     }
+
+    /**
+     * Returns true if the given object is null
+     */
+    public static boolean isNull(Object value) {
+        return value == null;
+    }
 }

@@ -5,17 +5,15 @@ import com.gymbooking.model.*;
 
 public class Main {
 
-    public static void printPersonInfo(Person person) {
-        System.out.println(person);
-    }
-
     public static void main(String[] args) {
 
         Member m = Member.of("Panos", "Mertikas", "panos@mail.com", 25);
-        Trainer t = Trainer.of("Maria", "Papadopoulou", 35, "Yoga");
 
-        printPersonInfo(m);
-        printPersonInfo(t);
+        GymClass yoga = GymClass.of("Yoga", "Maria", 10);
+
+        Booking booking = Booking.of("2024-01-15", "10:00", yoga, m);
+
+        System.out.println(booking);
     }
 }
 

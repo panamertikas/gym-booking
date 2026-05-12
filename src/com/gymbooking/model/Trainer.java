@@ -31,6 +31,8 @@ public class Trainer extends Person{
         this.speciality = speciality;
     }
 
+
+
     @Override
     public String toString() {
         return "Trainer Information" + "\n" + "Firstname: " + getFirstname() + "\n" + "Lastname: " + getLastname() + "\n" +
