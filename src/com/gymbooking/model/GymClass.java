@@ -1,5 +1,7 @@
 package com.gymbooking.model;
 
+import com.gymbooking.exceptions.GymClassEmptyException;
+import com.gymbooking.exceptions.GymClassFullException;
 import com.gymbooking.util.GymUtils;
 
 public class GymClass {
@@ -98,10 +100,9 @@ public class GymClass {
      * Adds a member to the class.
      * Fails if the class is already full.
      */
-    public void addMember() {
+    public void addMember() throws GymClassFullException {
         if (currentCapacity >= maxCapacity) {
-            System.out.println("Class is full");
-            return;
+            throw new GymClassFullException("Class " + className + " is full.");
         }
 
         currentCapacity++;
@@ -113,10 +114,9 @@ public class GymClass {
      * Removes a member from the class.
      * Fails if the class is empty.
      */
-    public void removeMember() {
+    public void removeMember() throws GymClassEmptyException {
         if (currentCapacity <= 0) {
-            System.out.println("Class is empty. No members to remove");
-            return;
+            throw new GymClassEmptyException("Class " + className + " is empty.");
         }
 
         currentCapacity--;
