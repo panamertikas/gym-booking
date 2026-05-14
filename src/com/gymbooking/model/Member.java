@@ -57,4 +57,34 @@ public class Member extends Person{
         return "Firstname: " + getFirstname() + "\n" + "Lastname: " + getLastname() + "\n" +
                 "E-mail : " + mail + "\n" + "Age: " + getAge() + "\n" ;
     }
+
+    public static class Builder {
+        private String firstname;
+        private String lastname;
+        private String mail;
+        private int age;
+
+        public Builder(String firstname, String lastname) {
+            this.firstname = firstname;
+            this.lastname = lastname;
+        }
+
+        public Builder mail(String mail) {
+            this.mail = mail;
+            return this;
+        }
+
+        public Builder age (int age) {
+            this.age =age;
+            return this;
+        }
+
+        public Member build() {
+            return new Member(firstname, lastname, mail, age);
+        }
+    }
+
+
+
+
 }

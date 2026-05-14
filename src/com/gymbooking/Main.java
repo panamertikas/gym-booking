@@ -7,11 +7,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Member m = Member.of("Panos", "Mertikas", "panos@mail.com", 25);
-        Trainer t = Trainer.of("Maria", "Papadopoulou", 35, "Yoga");
+        Member m = new Member.Builder("Panos", "Mertikas")
+                .mail("panos@mail.com")
+                .age(25)
+                .build();
 
-        System.out.println(m.getRole());
-        System.out.println(t.getRole());
+        System.out.println(m);
     }
 }
 
