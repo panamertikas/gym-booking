@@ -2,6 +2,8 @@ package com.gymbooking.model;
 
 import com.gymbooking.util.GymUtils;
 
+import java.util.Objects;
+
 public class Member extends Person{
 
 
@@ -84,7 +86,14 @@ public class Member extends Person{
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Member member)) return false;
+        return Objects.equals(mail, member.mail);
+    }
 
-
-
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(mail);
+    }
 }

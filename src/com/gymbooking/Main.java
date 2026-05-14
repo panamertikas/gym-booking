@@ -7,12 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Member m = new Member.Builder("Panos", "Mertikas")
-                .mail("panos@mail.com")
-                .age(25)
-                .build();
-
-        System.out.println(m);
+        Member m1 = Member.of("Panos", "Mertikas", "panos@mail.com", 25);
+        Member m2 = Member.of("Panos", "Mertikas", "panos@mail.com", 25);
+        System.out.println(m1.equals(m2));
     }
 }
 
