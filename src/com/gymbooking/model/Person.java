@@ -1,5 +1,6 @@
 package com.gymbooking.model;
 
+import com.gymbooking.enums.Role;
 import com.gymbooking.util.GymUtils;
 
 public abstract class Person {
@@ -7,6 +8,7 @@ public abstract class Person {
     private String firstname;
     private String lastname;
     private int age;
+    private Role role;
 
     public Person() {
 
@@ -18,7 +20,9 @@ public abstract class Person {
         setAge(age);
     }
 
-    public abstract String getRole();
+    public Role getRole() {
+        return role;
+    }
 
     public String getFirstname() {
         return firstname;
@@ -55,6 +59,10 @@ public abstract class Person {
             return;
         }
         this.age = age;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override

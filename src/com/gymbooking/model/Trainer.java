@@ -1,5 +1,6 @@
 package com.gymbooking.model;
 
+import com.gymbooking.enums.Role;
 import com.gymbooking.util.GymUtils;
 
 public class Trainer extends Person{
@@ -13,16 +14,14 @@ public class Trainer extends Person{
     public Trainer(String firstname, String lastname, int age, String speciality) {
         super(firstname, lastname, age);
         setSpeciality(speciality);
+        setRole(Role.TRAINER);
     }
 
     public static Trainer of(String firstname, String lastname, int age, String speciality) {
         return new Trainer(firstname, lastname, age, speciality);
     }
 
-    @Override
-    public String getRole() {
-        return "Trainer";
-    }
+
 
     public String getSpeciality() {
         return speciality;

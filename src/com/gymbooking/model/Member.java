@@ -1,5 +1,7 @@
 package com.gymbooking.model;
 
+import com.gymbooking.enums.MembershipType;
+import com.gymbooking.enums.Role;
 import com.gymbooking.util.GymUtils;
 
 import java.util.Objects;
@@ -8,6 +10,7 @@ public class Member extends Person{
 
 
     private String mail;
+    private MembershipType membershipType;
 
 
 
@@ -17,6 +20,7 @@ public class Member extends Person{
     public Member(String firstname, String lastname, String mail, int age) {
         super(firstname, lastname, age);
         setMail(mail);
+        setRole(Role.MEMBER);
 
     }
 
@@ -27,13 +31,18 @@ public class Member extends Person{
         return new Member(firstname, lastname, mail, age);
     }
 
-    @Override
-    public String getRole() {
-        return "Member";
-    }
+
 
     // Getters - Setters
 
+
+    public MembershipType getMembershipType() {
+        return membershipType;
+    }
+
+    public void setMembershipType(MembershipType membershipType) {
+        this.membershipType = membershipType;
+    }
 
     public String getMail() {
         return mail;
@@ -56,8 +65,9 @@ public class Member extends Person{
 
     @Override
     public String toString() {
-        return "Firstname: " + getFirstname() + "\n" + "Lastname: " + getLastname() + "\n" +
-                "E-mail : " + mail + "\n" + "Age: " + getAge() + "\n" ;
+        return "Firstname: " + getFirstname()
+                + "\n" + "Lastname: " + getLastname() + "\n" +
+                "E-mail : " + mail + "\n" + "Age: " + getAge() + "\n" + "Membership Type: " + membershipType ;
     }
 
     public static class Builder {
@@ -65,6 +75,12 @@ public class Member extends Person{
         private String lastname;
         private String mail;
         private int age;
+        private MembershipType membershipType;
+
+        public Builder membershipType(MembershipType membershipType) {
+            this.membershipType = membershipType;
+            return this;
+        }
 
         public Builder(String firstname, String lastname) {
             this.firstname = firstname;
@@ -82,7 +98,9 @@ public class Member extends Person{
         }
 
         public Member build() {
-            return new Member(firstname, lastname, mail, age);
+            Member member = new Member(firstname, lastname, mail, age);
+            member.setMembershipType(membershipType);
+            return member;
         }
     }
 
