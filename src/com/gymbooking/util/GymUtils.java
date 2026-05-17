@@ -28,4 +28,11 @@ public class GymUtils {
     public static boolean isNull(Object value) {
         return value == null;
     }
+
+    /**
+     * Returns true if the given string is a valid email address.
+     */
+    public static boolean isValidEmail(String email) {
+        return email.matches("^[\\w.]+@[\\w]+\\.(com|gr)$");
+    }
 }

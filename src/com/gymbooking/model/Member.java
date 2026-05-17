@@ -49,8 +49,8 @@ public class Member extends Person{
     }
 
     public void setMail(String mail) {
-        if (GymUtils.isNullOrEmpty(mail)) {
-            System.out.println("Invalid mail");
+        if (GymUtils.isNullOrEmpty(mail) || !GymUtils.isValidEmail(mail)) {
+            System.out.println("Invalid mail.");
             return;
         }
         this.mail = mail;
